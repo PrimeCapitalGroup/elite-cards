@@ -209,111 +209,56 @@ h1{
   color:#444;
 }
 
-<!-- FEEDBACKS -->
-<div class="section">
+/* FEEDBACKS */
+.feedbacks{
+  margin-top:60px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+}
 
-<h2>Feedbacks da comunidade</h2>
+.feedback{
+  width:320px;
+  background:#101010;
+  border:1px solid #222;
+  border-radius:28px;
+  padding:25px;
+  text-align:left;
+  transition:0.3s;
+}
 
-<div class="feedbacks">
+.feedback:hover{
+  transform:translateY(-8px);
+}
 
-<div class="feedback">
+.fb-top{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
 
-<div class="fb-top">
+.avatar-img{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid #34d399;
+  box-shadow:0 0 18px rgba(52,211,153,0.35);
+  background:#111;
+}
 
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Lucas"
-/>
+.name{
+  font-weight:bold;
+  font-size:17px;
+}
 
-<div>
-<div class="name">Lucas Ferreira</div>
-
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Comecei a anotar meus gastos e já consegui economizar mais no fim do mês.”
-</div>
-
-</div>
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Amanda"
-/>
-
-<div>
-<div class="name">Amanda Costa</div>
-
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Gostei porque é simples de entender e direto ao ponto.”
-</div>
-
-</div>
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Carlos"
-/>
-
-<div>
-<div class="name">Carlos Henrique</div>
-
-<div class="stars">
-<span class="gold">★★★★</span><span class="gray">★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Comecei a perceber vários gastos que eu nem notava antes.”
-</div>
-
-</div>
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Fernanda"
-/>
-
-<div>
-<div class="name">Fernanda Lima</div>
-
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Me ajudou bastante a me organizar melhor financeiramente.”
-</div>
-
-</div>
-
-</div>
-</div>
+.message{
+  color:#ccc;
+  line-height:1.7;
+  font-size:15px;
+}
 
 /* BADGES */
 .badges{
@@ -535,40 +480,6 @@ Tudo explicado de forma simples, prática e direta ao ponto.
 
 </div>
 
-<!-- DEPOIMENTOS -->
-<div class="section">
-
-<h2>Resultados da comunidade</h2>
-
-<div class="cards">
-
-<div class="card show">
-<div class="stars">
-<span class="gold">★★★★</span><span class="gray">★</span>
-</div>
-<h3>Lucas S.</h3>
-<p>“Muito bom pra quem quer começar a se organizar financeiramente.”</p>
-</div>
-
-<div class="card show">
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-<h3>Mariana P.</h3>
-<p>“Mudou completamente minha visão sobre dinheiro.”</p>
-</div>
-
-<div class="card show">
-<div class="stars">
-<span class="gold">★★★</span><span class="gray">★★</span>
-</div>
-<h3>Rafael M.</h3>
-<p>“Consegui controlar melhor meus gastos depois que comecei.”</p>
-</div>
-
-</div>
-</div>
-
 <!-- FEEDBACKS -->
 <div class="section">
 
@@ -577,36 +488,99 @@ Tudo explicado de forma simples, prática e direta ao ponto.
 <div class="feedbacks">
 
 <div class="feedback">
+
 <div class="fb-top">
-<div class="avatar"></div>
-<div class="name">Amanda Costa</div>
+
+<img class="avatar-img"
+src="https://api.dicebear.com/7.x/adventurer/svg?seed=Lucas"
+/>
+
+<div>
+<div class="name">Lucas Ferreira</div>
+
+<div class="stars">
+<span class="gold">★★★★★</span>
+</div>
+</div>
+
 </div>
 
 <div class="message">
-“Gostei porque é simples de entender e direto ao ponto.”
+“Comecei a controlar melhor meu dinheiro e parei de gastar com coisas inúteis.”
 </div>
+
 </div>
 
 <div class="feedback">
+
 <div class="fb-top">
-<div class="avatar"></div>
+
+<img class="avatar-img"
+src="https://api.dicebear.com/7.x/adventurer/svg?seed=Amanda"
+/>
+
+<div>
+<div class="name">Amanda Costa</div>
+
+<div class="stars">
+<span class="gold">★★★★★</span>
+</div>
+</div>
+
+</div>
+
+<div class="message">
+“Gostei porque é simples de entender e realmente faz você mudar sua mentalidade.”
+</div>
+
+</div>
+
+<div class="feedback">
+
+<div class="fb-top">
+
+<img class="avatar-img"
+src="https://api.dicebear.com/7.x/adventurer/svg?seed=Carlos"
+/>
+
+<div>
 <div class="name">Carlos Henrique</div>
+
+<div class="stars">
+<span class="gold">★★★★</span><span class="gray">★</span>
+</div>
+</div>
+
 </div>
 
 <div class="message">
 “Comecei a perceber vários gastos que eu nem notava antes.”
 </div>
+
 </div>
 
 <div class="feedback">
+
 <div class="fb-top">
-<div class="avatar"></div>
+
+<img class="avatar-img"
+src="https://api.dicebear.com/7.x/adventurer/svg?seed=Fernanda"
+/>
+
+<div>
 <div class="name">Fernanda Lima</div>
+
+<div class="stars">
+<span class="gold">★★★★★</span>
+</div>
+</div>
+
 </div>
 
 <div class="message">
-“Me ajudou bastante a me organizar melhor financeiramente.”
+“Me ajudou bastante a me organizar financeiramente de forma simples.”
 </div>
+
 </div>
 
 </div>
@@ -638,6 +612,11 @@ ACESSAR AGORA
 <footer>
 © 2026 Wealth Mind System • Todos os direitos reservados
 </footer>
+
+<!-- BOTÃO -->
+<a class="float-btn" href="https://pay.kiwify.com.br/nSiqu2j">
+🔥 COMPRAR AGORA
+</a>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
