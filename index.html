@@ -106,11 +106,8 @@ h1{
 /* BOTÕES */
 .btn{
   display:inline-block;
-  margin-top:35px;
   padding:20px 50px;
   border-radius:18px;
-  background:#34d399;
-  color:black;
   text-decoration:none;
   font-weight:bold;
   font-size:20px;
@@ -120,6 +117,30 @@ h1{
 
 .btn:hover{
   transform:translateY(-5px) scale(1.03);
+}
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:35px;
+}
+
+.buy-btn{
+  background:#34d399;
+  color:black;
+}
+
+.chat-btn{
+  background:transparent;
+  border:1px solid #34d399;
+  color:#34d399;
+}
+
+.chat-btn:hover{
+  background:#34d399;
+  color:black;
 }
 
 .small-text{
@@ -420,9 +441,17 @@ DA SUA VIDA FINANCEIRA
 Descubra o método que está ajudando pessoas comuns a organizar suas finanças, cortar desperdícios e construir uma mentalidade financeira mais inteligente.
 </p>
 
-<a class="btn" href="https://pay.kiwify.com.br/nSiqu2j">
-QUERO ACESSAR AGORA
+<div class="hero-buttons">
+
+<a class="btn buy-btn" href="https://pay.kiwify.com.br/nSiqu2j">
+💸 COMPRAR AGORA
 </a>
+
+<a class="btn chat-btn" href="https://discord.com/users/vertexlab_7">
+💬 FALAR COMIGO
+</a>
+
+</div>
 
 <div class="small-text">
 ✔ acesso imediato • ✔ conteúdo digital • ✔ suporte da comunidade
@@ -430,249 +459,3 @@ QUERO ACESSAR AGORA
 
 </div>
 </div>
-
-<!-- BENEFÍCIOS -->
-<div class="section">
-
-<h2>O que você vai aprender</h2>
-
-<p>
-Tudo explicado de forma simples, prática e direta ao ponto.
-</p>
-
-<div class="cards">
-
-<div class="card">
-<div class="icon">💸</div>
-<h3>Controle financeiro</h3>
-<p>Entenda exatamente para onde seu dinheiro está indo.</p>
-</div>
-
-<div class="card">
-<div class="icon">📈</div>
-<h3>Organização</h3>
-<p>Aprenda um método simples para organizar sua renda.</p>
-</div>
-
-<div class="card">
-<div class="icon">🚀</div>
-<h3>Mentalidade</h3>
-<p>Desenvolva hábitos financeiros mais inteligentes.</p>
-</div>
-
-</div>
-</div>
-
-<!-- BADGES -->
-<div class="section">
-
-<h2>Diferenciais do método</h2>
-
-<div class="badges">
-
-<div class="badge-item">✔ Conteúdo direto</div>
-<div class="badge-item">✔ Acesso imediato</div>
-<div class="badge-item">✔ Linguagem simples</div>
-<div class="badge-item">✔ Método prático</div>
-<div class="badge-item">✔ Atualizações futuras</div>
-
-</div>
-
-</div>
-
-<!-- FEEDBACKS -->
-<div class="section">
-
-<h2>Feedbacks da comunidade</h2>
-
-<div class="feedbacks">
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Lucas"
-/>
-
-<div>
-<div class="name">Lucas Ferreira</div>
-
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Comecei a controlar melhor meu dinheiro e parei de gastar com coisas inúteis.”
-</div>
-
-</div>
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Amanda"
-/>
-
-<div>
-<div class="name">Amanda Costa</div>
-
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Gostei porque é simples de entender e realmente faz você mudar sua mentalidade.”
-</div>
-
-</div>
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Carlos"
-/>
-
-<div>
-<div class="name">Carlos Henrique</div>
-
-<div class="stars">
-<span class="gold">★★★★</span><span class="gray">★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Comecei a perceber vários gastos que eu nem notava antes.”
-</div>
-
-</div>
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Fernanda"
-/>
-
-<div>
-<div class="name">Fernanda Lima</div>
-
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Me ajudou bastante a me organizar financeiramente de forma simples.”
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- CTA -->
-<div class="section">
-
-<div class="cta-box">
-
-<h2>Comece sua transformação financeira hoje</h2>
-
-<p>
-Acesso liberado imediatamente após a confirmação do pagamento.
-</p>
-
-<a class="btn" href="https://pay.kiwify.com.br/nSiqu2j">
-ACESSAR AGORA
-</a>
-
-<div class="small-text">
-🔥 pessoas estão acessando esse material agora
-</div>
-
-</div>
-
-</div>
-
-<footer>
-© 2026 Wealth Mind System • Todos os direitos reservados
-</footer>
-
-<!-- POPUP -->
-<div class="popup" id="popup">
-<strong>Lucas Ferreira</strong> acabou de acessar o método 🔥
-</div>
-
-<script>
-
-/* POPUP */
-const people = [
-"Lucas Ferreira",
-"Amanda Costa",
-"Carlos Henrique",
-"Fernanda Lima",
-"Marcos Almeida",
-"Juliana Rocha",
-"Pedro Santos",
-"Camila Martins",
-"Ricardo Souza",
-"Patricia Gomes",
-"Bruno Oliveira",
-"Larissa Mendes",
-"Thiago Ribeiro",
-"Beatriz Moraes",
-"Felipe Cardoso",
-"Renata Silva",
-"Vinicius Lopes",
-"Eduarda Ramos",
-"Gustavo Pereira",
-"Natália Fernandes"
-];
-
-setInterval(() => {
-
-const random =
-people[Math.floor(Math.random()*people.length)];
-
-document.getElementById("popup").innerHTML =
-"<strong>"+random+"</strong> acabou de acessar o método 🔥";
-
-},5000);
-
-/* ANIMAÇÃO AO ROLAR */
-const cards = document.querySelectorAll(".card");
-
-window.addEventListener("scroll", () => {
-
-cards.forEach(card => {
-
-const top =
-card.getBoundingClientRect().top;
-
-if(top < window.innerHeight - 100){
-  card.classList.add("show");
-}
-  
-});
-
-});
-
-</script>
-
-</body>
-</html>
