@@ -121,6 +121,36 @@ h1{
 .btn:hover{
   transform:translateY(-5px) scale(1.03);
 }
+  .hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:35px;
+}
+
+.btn-discord{
+  background:#5865F2;
+  color:white;
+  box-shadow:0 0 40px rgba(88,101,242,0.45);
+}
+
+.btn-discord:hover{
+  transform:translateY(-5px) scale(1.03);
+}
+
+@media(max-width:768px){
+
+.hero-buttons{
+  flex-direction:column;
+  align-items:center;
+}
+
+.hero-buttons .btn{
+  width:100%;
+}
+
+}
 
 .small-text{
   margin-top:15px;
@@ -420,9 +450,17 @@ DA SUA VIDA FINANCEIRA
 Descubra o método que está ajudando pessoas comuns a organizar suas finanças, cortar desperdícios e construir uma mentalidade financeira mais inteligente.
 </p>
 
-<a class="btn" href="https://pay.kiwify.com.br/nSiqu2j">
-QUERO ACESSAR AGORA
+  <div class="hero-buttons">
+
+<a class="btn" href="https://pay.kiwify.com.br/nSiqu2j" target="_blank">
+💳 COMPRAR AGORA
 </a>
+
+<a class="btn btn-discord" href="https://discord.com/users/vertexlab_7" target="_blank">
+💬 FALAR NO DISCORD
+</a>
+
+</div>
 
 <div class="small-text">
 ✔ acesso imediato • ✔ conteúdo digital • ✔ suporte da comunidade
