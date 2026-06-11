@@ -1,718 +1,172 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wealth Mind System</title>
+<title>Elite Cards</title>
 
 <style>
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#050505;
-  color:white;
-  overflow-x:hidden;
+background:#0f172a;
+color:white;
 }
 
-/* FUNDO */
-.bg-glow{
-  position:fixed;
-  width:700px;
-  height:700px;
-  background:#34d39920;
-  filter:blur(140px);
-  border-radius:50%;
-  top:-200px;
-  right:-200px;
-  z-index:-1;
+header{
+text-align:center;
+padding:50px 20px;
 }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px 20px;
-  overflow:hidden;
+header h1{
+font-size:3rem;
+margin-bottom:10px;
 }
 
-.hero video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
+header p{
+color:#94a3b8;
 }
 
-.overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.78);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:950px;
-  animation:fadeUp 1s ease;
-}
-
-.badge{
-  display:inline-block;
-  padding:10px 22px;
-  border-radius:50px;
-  border:1px solid #34d39970;
-  background:#34d39915;
-  color:#34d399;
-  margin-bottom:25px;
-  font-size:14px;
-  letter-spacing:1px;
-  backdrop-filter:blur(10px);
-}
-
-h1{
-  font-size:72px;
-  line-height:1.05;
-  color:white;
-}
-
-.highlight{
-  color:#34d399;
-}
-
-.hero p{
-  color:#ddd;
-  margin-top:30px;
-  font-size:22px;
-  line-height:1.7;
-  max-width:800px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* BOTÕES */
-.btn{
-  display:inline-block;
-  margin-top:35px;
-  padding:20px 50px;
-  border-radius:18px;
-  background:#34d399;
-  color:black;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:20px;
-  transition:0.3s;
-  box-shadow:0 0 40px rgba(52,211,153,0.45);
-}
-
-.btn:hover{
-  transform:translateY(-5px) scale(1.03);
-}
-  .hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-top:35px;
-}
-
-.btn-discord{
-  background:#5865F2;
-  color:white;
-  box-shadow:0 0 40px rgba(88,101,242,0.45);
-}
-
-.btn-discord:hover{
-  transform:translateY(-5px) scale(1.03);
-}
-
-@media(max-width:768px){
-
-.hero-buttons{
-  flex-direction:column;
-  align-items:center;
-}
-
-.hero-buttons .btn{
-  width:100%;
-}
-
-}
-
-.small-text{
-  margin-top:15px;
-  color:#888;
-  font-size:14px;
-}
-
-/* SECTION */
-.section{
-  padding:110px 20px;
-  text-align:center;
-}
-
-.section h2{
-  font-size:48px;
-  margin-bottom:20px;
-}
-
-.section p{
-  color:#aaa;
-  max-width:760px;
-  margin:0 auto;
-  line-height:1.8;
-  font-size:18px;
-}
-
-/* CARDS */
 .cards{
-  margin-top:60px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+padding:50px 20px;
 }
 
 .card{
-  width:290px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  backdrop-filter:blur(12px);
-  border-radius:28px;
-  padding:40px 30px;
-  transition:0.35s;
-  opacity:0;
-  transform:translateY(40px);
-}
-
-.card.show{
-  opacity:1;
-  transform:translateY(0);
+width:320px;
+padding:30px;
+border-radius:20px;
+transition:.3s;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  border-color:#34d39960;
-  box-shadow:0 0 30px rgba(52,211,153,0.15);
+transform:translateY(-10px);
 }
 
-.card h3{
-  margin-top:20px;
-  color:#34d399;
-  font-size:24px;
-}
-
-.card p{
-  margin-top:15px;
-  color:#bbb;
-  font-size:16px;
-}
-
-.icon{
-  font-size:42px;
-}
-
-/* ESTRELAS */
-.stars{
-  margin-bottom:15px;
-  font-size:22px;
+.classic{
+background:linear-gradient(135deg,#1e293b,#334155);
 }
 
 .gold{
-  color:gold;
+background:linear-gradient(135deg,#b8860b,#ffd700);
+color:black;
 }
 
-.gray{
-  color:#444;
+.diamond{
+background:linear-gradient(135deg,#00c6ff,#0072ff);
 }
 
-/* FEEDBACKS */
-.feedbacks{
-  margin-top:60px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
+.card h2{
+font-size:2rem;
+margin-bottom:15px;
 }
 
-.feedback{
-  width:320px;
-  background:#101010;
-  border:1px solid #222;
-  border-radius:28px;
-  padding:25px;
-  text-align:left;
-  transition:0.3s;
+.limite{
+font-size:2.2rem;
+font-weight:bold;
+margin:20px 0;
 }
 
-.feedback:hover{
-  transform:translateY(-8px);
+ul{
+list-style:none;
+margin-bottom:25px;
 }
 
-.fb-top{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-bottom:18px;
+ul li{
+margin:10px 0;
 }
 
-.avatar-img{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid #34d399;
-  box-shadow:0 0 18px rgba(52,211,153,0.35);
-  background:#111;
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
+font-size:1rem;
+font-weight:bold;
+cursor:pointer;
 }
 
-.name{
-  font-weight:bold;
-  font-size:17px;
+.classic button{
+background:#64748b;
+color:white;
 }
 
-.message{
-  color:#ccc;
-  line-height:1.7;
-  font-size:15px;
+.gold button{
+background:black;
+color:white;
 }
 
-/* BADGES */
-.badges{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:15px;
-  margin-top:40px;
+.diamond button{
+background:white;
+color:#0072ff;
 }
-
-.badge-item{
-  padding:14px 22px;
-  border-radius:18px;
-  background:#111;
-  border:1px solid #222;
-  color:#bbb;
-}
-
-/* CTA FINAL */
-.cta-box{
-  margin-top:50px;
-  background:linear-gradient(135deg,#111,#0b0b0b);
-  border:1px solid #222;
-  border-radius:35px;
-  padding:60px 30px;
-  max-width:900px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* BOTÃO FLUTUANTE */
-.float-btn{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#34d399;
-  color:black;
-  text-decoration:none;
-  padding:18px 26px;
-  border-radius:50px;
-  font-weight:bold;
-  box-shadow:0 0 35px rgba(52,211,153,0.5);
-  z-index:999;
-  animation:pulse 1.6s infinite;
-}
-
-/* POPUP */
-.popup{
-  position:fixed;
-  left:20px;
-  bottom:20px;
-  background:#111;
-  border:1px solid #222;
-  padding:16px 22px;
-  border-radius:18px;
-  z-index:999;
-  max-width:320px;
-  animation:fadeIn 0.5s ease;
-}
-
-.popup strong{
-  color:#34d399;
-}
-
-/* FOOTER */
-footer{
-  padding:50px 20px;
-  text-align:center;
-  color:#666;
-  border-top:1px solid #151515;
-  margin-top:80px;
-}
-
-/* ANIMAÇÕES */
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.08);}
-  100%{transform:scale(1);}
-}
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@media(max-width:768px){
-
-h1{
-  font-size:44px;
-}
-
-.hero p{
-  font-size:18px;
-}
-
-.section h2{
-  font-size:34px;
-}
-
-.btn{
-  width:100%;
-  font-size:18px;
-}
-
-.float-btn{
-  right:12px;
-  left:12px;
-  text-align:center;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="bg-glow"></div>
+<header>
+<h1>Elite Cards</h1>
+<p>Escolha o cartão ideal para o seu perfil.</p>
+</header>
 
-<!-- HERO -->
-<div class="hero">
+<section class="cards">
 
-<video autoplay muted loop playsinline>
-<source src="https://cdn.coverr.co/videos/coverr-working-on-finances-1560997841892?download=1080p" type="video/mp4">
-</video>
+<div class="card classic">
+<h2>Classic</h2>
+<p>Ideal para o dia a dia.</p>
 
-<div class="overlay"></div>
+<div class="limite">R$ 1.500</div>
 
-<div class="hero-content">
+<ul>
+<li>✔ Sem anuidade</li>
+<li>✔ Compras online</li>
+<li>✔ Cartão virtual</li>
+</ul>
 
-<div class="badge">
-🔥 MÉTODO MAIS ACESSADO DA SEMANA
+<button>Solicitar</button>
 </div>
 
-<h1>
-PARE DE <span class="highlight">PERDER DINHEIRO</span><br>
-E ASSUMA O CONTROLE<br>
-DA SUA VIDA FINANCEIRA
-</h1>
+<div class="card gold">
+<h2>Gold</h2>
+<p>Mais benefícios e limite.</p>
 
-<p>
-Descubra o método que está ajudando pessoas comuns a organizar suas finanças, cortar desperdícios e construir uma mentalidade financeira mais inteligente.
-</p>
+<div class="limite">R$ 8.000</div>
 
-  <div class="hero-buttons">
+<ul>
+<li>✔ Cashback</li>
+<li>✔ Parcelamentos especiais</li>
+<li>✔ Suporte prioritário</li>
+</ul>
 
+<button>Solicitar</button>
 </div>
 
-<div class="small-text">
-✔ acesso imediato • ✔ conteúdo digital • ✔ suporte da comunidade
+<div class="card diamond">
+<h2>Diamond</h2>
+<p>Experiência premium.</p>
+
+<div class="limite">R$ 50.000</div>
+
+<ul>
+<li>✔ Lounge VIP</li>
+<li>✔ Cashback Premium</li>
+<li>✔ Concierge 24h</li>
+</ul>
+
+<button>Solicitar</button>
 </div>
 
-</div>
-</div>
-
-<!-- BENEFÍCIOS -->
-<div class="section">
-
-<h2>O que você vai aprender</h2>
-
-<p>
-Tudo explicado de forma simples, prática e direta ao ponto.
-</p>
-
-<div class="cards">
-
-<div class="card">
-<div class="icon">💸</div>
-<h3>Controle financeiro</h3>
-<p>Entenda exatamente para onde seu dinheiro está indo.</p>
-</div>
-
-<div class="card">
-<div class="icon">📈</div>
-<h3>Organização</h3>
-<p>Aprenda um método simples para organizar sua renda.</p>
-</div>
-
-<div class="card">
-<div class="icon">🚀</div>
-<h3>Mentalidade</h3>
-<p>Desenvolva hábitos financeiros mais inteligentes.</p>
-</div>
-
-</div>
-</div>
-
-<!-- BADGES -->
-<div class="section">
-
-<h2>Diferenciais do método</h2>
-
-<div class="badges">
-
-<div class="badge-item">✔ Conteúdo direto</div>
-<div class="badge-item">✔ Acesso imediato</div>
-<div class="badge-item">✔ Linguagem simples</div>
-<div class="badge-item">✔ Método prático</div>
-<div class="badge-item">✔ Atualizações futuras</div>
-
-</div>
-
-</div>
-
-<!-- FEEDBACKS -->
-<div class="section">
-
-<h2>Feedbacks da comunidade</h2>
-
-<div class="feedbacks">
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Lucas"
-/>
-
-<div>
-<div class="name">Lucas Ferreira</div>
-
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Comecei a controlar melhor meu dinheiro e parei de gastar com coisas inúteis.”
-</div>
-
-</div>
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Amanda"
-/>
-
-<div>
-<div class="name">Amanda Costa</div>
-
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Gostei porque é simples de entender e realmente faz você mudar sua mentalidade.”
-</div>
-
-</div>
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Carlos"
-/>
-
-<div>
-<div class="name">Carlos Henrique</div>
-
-<div class="stars">
-<span class="gold">★★★★</span><span class="gray">★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Comecei a perceber vários gastos que eu nem notava antes.”
-</div>
-
-</div>
-
-<div class="feedback">
-
-<div class="fb-top">
-
-<img class="avatar-img"
-src="https://api.dicebear.com/7.x/adventurer/svg?seed=Fernanda"
-/>
-
-<div>
-<div class="name">Fernanda Lima</div>
-
-<div class="stars">
-<span class="gold">★★★★★</span>
-</div>
-</div>
-
-</div>
-
-<div class="message">
-“Me ajudou bastante a me organizar financeiramente de forma simples.”
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- CTA -->
-<div class="section">
-
-<div class="cta-box">
-
-<h2>Comece sua transformação financeira hoje</h2>
-
-<p>
-Acesso liberado imediatamente após a confirmação do pagamento.
-</p>
-
-<div class="hero-buttons">
-
-<a class="btn" href="https://pay.kiwify.com.br/6XYqSZ0" target="_blank">
-💳 COMPRAR AGORA
-</a>
-
-<a class="btn btn-discord" href="https://discord.com/users/vertexlab_7" target="_blank">
-💬 FALAR NO DISCORD
-</a>
-
-</div>
-
-<div class="small-text">
-🔥 pessoas estão acessando esse material agora
-</div>
-
-</div>
-
-</div>
-
-<footer>
-© 2026 Wealth Mind System • Todos os direitos reservados
-</footer>
-
-</a>
-
-<!-- POPUP -->
-<div class="popup" id="popup">
-<strong>Lucas Ferreira</strong> acabou de acessar o método 🔥
-</div>
-
-<script>
-
-/* POPUP */
-const people = [
-"Lucas Ferreira",
-"Amanda Costa",
-"Carlos Henrique",
-"Fernanda Lima",
-"Marcos Almeida",
-"Juliana Rocha",
-"Pedro Santos",
-"Camila Martins",
-"Ricardo Souza",
-"Patricia Gomes",
-"Bruno Oliveira",
-"Larissa Mendes",
-"Thiago Ribeiro",
-"Beatriz Moraes",
-"Felipe Cardoso",
-"Renata Silva",
-"Vinicius Lopes",
-"Eduarda Ramos",
-"Gustavo Pereira",
-"Natália Fernandes"
-];
-
-setInterval(() => {
-
-const random =
-people[Math.floor(Math.random()*people.length)];
-
-document.getElementById("popup").innerHTML =
-"<strong>"+random+"</strong> acabou de acessar o método 🔥";
-
-},5000);
-
-/* ANIMAÇÃO AO ROLAR */
-const cards = document.querySelectorAll(".card");
-
-window.addEventListener("scroll", () => {
-
-cards.forEach(card => {
-
-const top =
-card.getBoundingClientRect().top;
-
-if(top < window.innerHeight - 100){
-  card.classList.add("show");
-}
-
-});
-
-});
-
-</script>
+</section>
 
 </body>
 </html>
