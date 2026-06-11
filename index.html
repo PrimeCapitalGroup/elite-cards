@@ -46,6 +46,7 @@ padding:30px;
 border-radius:20px;
 transition:.3s;
 box-shadow:0 10px 30px rgba(0,0,0,.4);
+text-align:center;
 }
 
 .card:hover{
@@ -70,8 +71,8 @@ font-size:2rem;
 margin-bottom:15px;
 }
 
-.limite{
-font-size:2.2rem;
+.preco{
+font-size:3rem;
 font-weight:bold;
 margin:20px 0;
 }
@@ -83,6 +84,7 @@ margin-bottom:25px;
 
 ul li{
 margin:10px 0;
+font-size:18px;
 }
 
 button{
@@ -93,6 +95,11 @@ border-radius:10px;
 font-size:1rem;
 font-weight:bold;
 cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+opacity:.9;
 }
 
 .classic button{
@@ -116,54 +123,51 @@ color:#0072ff;
 
 <header>
 <h1>Elite Cards</h1>
-<p>Escolha o cartão ideal para o seu perfil.</p>
+<p>Escolha o cartão ideal para você.</p>
 </header>
 
 <section class="cards">
 
 <div class="card classic">
 <h2>Classic</h2>
-<p>Ideal para o dia a dia.</p>
 
-<div class="limite">R$ 1.500</div>
+<div class="preco">R$25</div>
 
 <ul>
-<li>✔ Sem anuidade</li>
-<li>✔ Compras online</li>
-<li>✔ Cartão virtual</li>
+<li>✔ Compra básica</li>
 </ul>
 
-<button>Solicitar</button>
+<a href="https://wa.me/5544998167018" target="_blank">
+<button>Comprar Agora</button>
+</a>
 </div>
 
 <div class="card gold">
 <h2>Gold</h2>
-<p>Mais benefícios e limite.</p>
 
-<div class="limite">R$ 8.000</div>
+<div class="preco">R$120</div>
 
 <ul>
-<li>✔ Cashback</li>
-<li>✔ Parcelamentos especiais</li>
-<li>✔ Suporte prioritário</li>
+<li>✔ Compras mais avançadas</li>
 </ul>
 
-<button>Solicitar</button>
+<a href="https://wa.me/5544998167018" target="_blank">
+<button>Comprar Agora</button>
+</a>
 </div>
 
 <div class="card diamond">
 <h2>Diamond</h2>
-<p>Experiência premium.</p>
 
-<div class="limite">R$ 50.000</div>
+<div class="preco">R$210</div>
 
 <ul>
-<li>✔ Lounge VIP</li>
-<li>✔ Cashback Premium</li>
-<li>✔ Concierge 24h</li>
+<li>✔ Compra VIP - A mais desejada</li>
 </ul>
 
-<button>Solicitar</button>
+<a href="https://wa.me/5544998167018" target="_blank">
+<button>Comprar Agora</button>
+</a>
 </div>
 
 </section>
