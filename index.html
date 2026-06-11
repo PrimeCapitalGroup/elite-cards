@@ -3,118 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Cards</title>
+<title>Elite Cards Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0f172a;
-color:white;
+    background:#050816;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:#00f7ff20;
+    filter:blur(150px);
+    top:-150px;
+    left:-150px;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#7b2cff20;
+    filter:blur(150px);
+    bottom:-150px;
+    right:-150px;
 }
 
 header{
-text-align:center;
-padding:50px 20px;
+    text-align:center;
+    padding:70px 20px;
+    position:relative;
+    z-index:2;
 }
 
 header h1{
-font-size:3rem;
-margin-bottom:10px;
+    font-size:4rem;
+    font-weight:700;
+    background:linear-gradient(90deg,#00e5ff,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 header p{
-color:#94a3b8;
+    color:#9ca3af;
+    margin-top:15px;
+    font-size:1.1rem;
 }
 
 .cards{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-padding:50px 20px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:40px;
+    padding:20px 30px 80px;
+    position:relative;
+    z-index:2;
 }
 
 .card{
-width:320px;
-padding:30px;
-border-radius:20px;
-transition:.3s;
-box-shadow:0 10px 30px rgba(0,0,0,.4);
-text-align:center;
+    width:340px;
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.1);
+    position:relative;
+    overflow:hidden;
+    transition:.4s;
+    transform-style:preserve-3d;
 }
 
 .card:hover{
-transform:translateY(-10px);
+    transform:translateY(-15px) rotateX(5deg);
 }
 
-.classic{
-background:linear-gradient(135deg,#1e293b,#334155);
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:25px;
+    z-index:-1;
 }
 
-.gold{
-background:linear-gradient(135deg,#b8860b,#ffd700);
-color:black;
+.classic::before{
+    background:linear-gradient(135deg,#00e5ff,#005eff);
 }
 
-.diamond{
-background:linear-gradient(135deg,#00c6ff,#0072ff);
+.gold::before{
+    background:linear-gradient(135deg,#ffd700,#ff8c00);
 }
 
-.card h2{
-font-size:2rem;
-margin-bottom:15px;
+.diamond::before{
+    background:linear-gradient(135deg,#00f7ff,#b517ff);
 }
 
-.preco{
-font-size:3rem;
-font-weight:bold;
-margin:20px 0;
+.inner{
+    background:#0b1020;
+    border-radius:22px;
+    padding:25px;
 }
 
-ul{
-list-style:none;
-margin-bottom:25px;
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
 }
 
-ul li{
-margin:10px 0;
-font-size:18px;
+.card-name{
+    font-size:28px;
+    font-weight:700;
 }
 
-button{
-width:100%;
-padding:15px;
-border:none;
-border-radius:10px;
-font-size:1rem;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
+.chip{
+    width:55px;
+    height:40px;
+    border-radius:10px;
+    background:linear-gradient(45deg,#d4d4d4,#8a8a8a);
 }
 
-button:hover{
-opacity:.9;
+.price{
+    font-size:52px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
-.classic button{
-background:#64748b;
-color:white;
+.price span{
+    font-size:20px;
 }
 
-.gold button{
-background:black;
-color:white;
+.desc{
+    color:#cbd5e1;
+    margin-bottom:25px;
 }
 
-.diamond button{
-background:white;
-color:#0072ff;
+.feature{
+    padding:12px;
+    margin-bottom:12px;
+    border-radius:12px;
+    background:rgba(255,255,255,.05);
+}
+
+.buy-btn{
+    display:block;
+    text-decoration:none;
+    text-align:center;
+    margin-top:25px;
+    padding:15px;
+    border-radius:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.classic .buy-btn{
+    background:#00e5ff;
+    color:#000;
+}
+
+.gold .buy-btn{
+    background:#ffd700;
+    color:#000;
+}
+
+.diamond .buy-btn{
+    background:#b517ff;
+    color:white;
+}
+
+.buy-btn:hover{
+    transform:scale(1.05);
+}
+
+.badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:white;
+    color:black;
+    padding:6px 12px;
+    border-radius:50px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.diamond .badge{
+    background:#00f7ff;
+}
+
+.glow{
+    animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        box-shadow:0 0 20px rgba(255,255,255,.15);
+    }
+    to{
+        box-shadow:0 0 40px rgba(0,247,255,.45);
+    }
+}
+
+footer{
+    text-align:center;
+    color:#64748b;
+    padding:30px;
+}
+
+@media(max-width:768px){
+    header h1{
+        font-size:2.5rem;
+    }
+
+    .card{
+        width:100%;
+        max-width:350px;
+    }
 }
 </style>
 </head>
@@ -122,55 +239,85 @@ color:#0072ff;
 <body>
 
 <header>
-<h1>Elite Cards</h1>
-<p>Escolha o cartão ideal para você.</p>
+    <h1>ELITE CARDS</h1>
+    <p>Escolha o plano perfeito para suas necessidades.</p>
 </header>
 
 <section class="cards">
 
-<div class="card classic">
-<h2>Classic</h2>
+    <div class="card classic glow">
+        <div class="inner">
+            <div class="card-top">
+                <div class="card-name">Classic</div>
+                <div class="chip"></div>
+            </div>
 
-<div class="preco">R$25</div>
+            <div class="price"><span>R$</span>25</div>
 
-<ul>
-<li>✔limete basico, ate R$300</li>
-</ul>
+            <div class="desc">
+                Acesso básico para compras essenciais.
+            </div>
 
-<a href="https://wa.me/5544998167018" target="_blank">
-<button>Comprar Agora</button>
-</a>
-</div>
+            <div class="feature">✔ Compra Básica</div>
 
-<div class="card gold">
-<h2>Gold</h2>
+            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">
+                Comprar Agora
+            </a>
+        </div>
+    </div>
 
-<div class="preco">R$120</div>
+    <div class="card gold glow">
+        <div class="badge">POPULAR</div>
 
-<ul>
-<li>✔ limites mais avançados, chega ate R$800</li>
-</ul>
+        <div class="inner">
+            <div class="card-top">
+                <div class="card-name">Gold</div>
+                <div class="chip"></div>
+            </div>
 
-<a href="https://wa.me/5544998167018" target="_blank">
-<button>Comprar Agora</button>
-</a>
-</div>
+            <div class="price"><span>R$</span>120</div>
 
-<div class="card diamond">
-<h2>Diamond</h2>
+            <div class="desc">
+                Para quem deseja mais possibilidades.
+            </div>
 
-<div class="preco">R$210</div>
+            <div class="feature">✔ Compras Mais Avançadas</div>
 
-<ul>
-<li>✔ limite VIP- chega ate R$3k</li>
-</ul>
+            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">
+                Comprar Agora
+            </a>
+        </div>
+    </div>
 
-<a href="https://wa.me/5544998167018" target="_blank">
-<button>Comprar Agora</button>
-</a>
-</div>
+    <div class="card diamond glow">
+        <div class="badge">VIP</div>
+
+        <div class="inner">
+            <div class="card-top">
+                <div class="card-name">Diamond</div>
+                <div class="chip"></div>
+            </div>
+
+            <div class="price"><span>R$</span>210</div>
+
+            <div class="desc">
+                O plano mais desejado da plataforma.
+            </div>
+
+            <div class="feature">✔ Compra VIP</div>
+            <div class="feature">✔ A Mais Desejada</div>
+
+            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">
+                Comprar Agora
+            </a>
+        </div>
+    </div>
 
 </section>
+
+<footer>
+    © 2026 Elite Cards • Todos os direitos reservados
+</footer>
 
 </body>
 </html>
