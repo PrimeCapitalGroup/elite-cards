@@ -16,7 +16,6 @@
     font-family:'Poppins',sans-serif;
 }
 
-/* FUNDO */
 body{
     background:#050816;
     color:white;
@@ -46,12 +45,9 @@ body::after{
     right:-150px;
 }
 
-/* HEADER */
 header{
     text-align:center;
     padding:70px 20px;
-    position:relative;
-    z-index:2;
 }
 
 header h1{
@@ -65,33 +61,22 @@ header h1{
 header p{
     color:#9ca3af;
     margin-top:15px;
-    font-size:1.1rem;
 }
 
-/* CARDS */
 .cards{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     gap:40px;
     padding:20px 30px 80px;
-    position:relative;
-    z-index:2;
 }
 
 .card{
     width:340px;
     padding:30px;
     border-radius:25px;
-    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.03);
     border:1px solid rgba(255,255,255,.1);
-    position:relative;
-    overflow:hidden;
-    transition:.4s;
-}
-
-.card:hover{
-    transform:translateY(-15px);
 }
 
 .inner{
@@ -111,25 +96,10 @@ header p{
     font-weight:700;
 }
 
-.chip{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:34px;
-    background:rgba(255,255,255,.08);
-}
-
 .price{
     font-size:52px;
     font-weight:700;
     margin-bottom:20px;
-}
-
-.price span{
-    font-size:20px;
 }
 
 .desc{
@@ -145,29 +115,12 @@ header p{
     border-radius:14px;
     font-weight:700;
     text-decoration:none;
-    transition:.3s;
+    background:#00e5ff;
+    color:#000;
 }
 
 .buy-btn:hover{
     transform:scale(1.05);
-}
-
-/* VARIAÇÕES */
-.classic .buy-btn{ background:#00e5ff; color:#000; }
-.gold .buy-btn{ background:#ffd700; color:#000; }
-.diamond .buy-btn{ background:#b517ff; color:#fff; }
-
-/* BADGE */
-.badge{
-    position:absolute;
-    top:15px;
-    right:15px;
-    background:white;
-    color:black;
-    padding:6px 12px;
-    border-radius:50px;
-    font-size:12px;
-    font-weight:700;
 }
 
 /* IMAGEM */
@@ -188,14 +141,12 @@ header p{
     transform:scale(1.05);
 }
 
-/* FOOTER */
 footer{
     text-align:center;
     color:#64748b;
     padding:30px;
 }
 
-/* RESPONSIVO */
 @media(max-width:768px){
     header h1{ font-size:2.5rem; }
     .card{ width:100%; max-width:350px; }
@@ -213,75 +164,54 @@ footer{
 
 <section class="cards">
 
-    <div class="card classic">
+    <div class="card">
         <div class="inner">
             <div class="card-top">
                 <div class="card-name">Classic</div>
-                <div class="chip"><i class="fa-solid fa-credit-card"></i></div>
             </div>
 
             <div class="price"><span>R$</span>25</div>
             <div class="desc">Acesso básico para compras essenciais.</div>
 
-            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">
-                Comprar Agora
-            </a>
+            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">Comprar Agora</a>
         </div>
     </div>
 
-    <div class="card gold">
-        <div class="badge">POPULAR</div>
+    <div class="card">
         <div class="inner">
-
             <div class="card-top">
                 <div class="card-name">Gold</div>
-                <div class="chip"><i class="fa-solid fa-credit-card"></i></div>
             </div>
 
             <div class="price"><span>R$</span>120</div>
             <div class="desc">Para quem deseja mais possibilidades.</div>
 
-            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">
-                Comprar Agora
-            </a>
+            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">Comprar Agora</a>
         </div>
     </div>
 
-    <div class="card diamond">
-        <div class="badge">VIP</div>
+    <div class="card">
         <div class="inner">
-
             <div class="card-top">
                 <div class="card-name">Diamond</div>
-                <div class="chip"><i class="fa-solid fa-gem"></i></div>
             </div>
 
             <div class="price"><span>R$</span>210</div>
-            <div class="desc">O plano mais desejado da plataforma com limites incríveis.</div>
+            <div class="desc">O plano mais desejado da plataforma.</div>
 
-            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">
-                Comprar Agora
-            </a>
+            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">Comprar Agora</a>
         </div>
     </div>
 
-    <!-- IMAGEM FINAL (CORRIGIDA) -->
-    <div class="card diamond">
+    <!-- CARD COM IMAGEM (CORRIGIDO) -->
+    <div class="card">
         <div class="inner">
 
             <div class="nf-image">
-
-                <!-- 🔥 TENTE NESSA ORDEM -->
-                <!-- 1 -->
-                <img src="cedula.jpg" alt="imagem">
-
-                <!-- 2 (se não funcionar, apague a de cima e use essa) -->
-                <!-- <img src="./cedula.jpg" alt="imagem"> -->
-
-                <!-- 3 (teste definitivo online) -->
-                <!-- <img src="https://picsum.photos/300" alt="teste"> -->
-
+                <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=300" alt="dinheiro">
             </div>
+
+            <div class="desc">Coleção premium disponível.</div>
 
             <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">
                 Comprar Agora
