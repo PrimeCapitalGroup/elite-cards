@@ -23,6 +23,7 @@ body{
     overflow-x:hidden;
 }
 
+/* FUNDO NEON */
 body::before{
     content:"";
     position:fixed;
@@ -71,12 +72,19 @@ header p{
     padding:20px 30px 80px;
 }
 
+/* CARD */
 .card{
     width:340px;
     padding:30px;
     border-radius:25px;
-    background:rgba(255,255,255,.03);
+    position:relative;
+    backdrop-filter:blur(20px);
     border:1px solid rgba(255,255,255,.1);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-15px);
 }
 
 .inner{
@@ -85,6 +93,7 @@ header p{
     padding:25px;
 }
 
+/* TOP */
 .card-top{
     display:flex;
     justify-content:space-between;
@@ -96,10 +105,25 @@ header p{
     font-weight:700;
 }
 
+.chip{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.08);
+}
+
+/* PRICE */
 .price{
     font-size:52px;
     font-weight:700;
     margin-bottom:20px;
+}
+
+.price span{
+    font-size:20px;
 }
 
 .desc{
@@ -107,6 +131,7 @@ header p{
     margin-bottom:25px;
 }
 
+/* BUTTON */
 .buy-btn{
     display:block;
     text-align:center;
@@ -115,12 +140,29 @@ header p{
     border-radius:14px;
     font-weight:700;
     text-decoration:none;
-    background:#00e5ff;
-    color:#000;
+    transition:.3s;
 }
 
 .buy-btn:hover{
     transform:scale(1.05);
+}
+
+/* CORES DOS PLANOS */
+.classic .buy-btn{ background:#00e5ff; color:#000; }
+.gold .buy-btn{ background:#ffd700; color:#000; }
+.diamond .buy-btn{ background:#b517ff; color:#fff; }
+
+/* BADGE */
+.badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:white;
+    color:black;
+    padding:6px 12px;
+    border-radius:50px;
+    font-size:12px;
+    font-weight:700;
 }
 
 /* IMAGEM */
@@ -141,6 +183,7 @@ header p{
     transform:scale(1.05);
 }
 
+/* FOOTER */
 footer{
     text-align:center;
     color:#64748b;
@@ -164,56 +207,53 @@ footer{
 
 <section class="cards">
 
-    <div class="card">
+    <div class="card classic">
         <div class="inner">
             <div class="card-top">
                 <div class="card-name">Classic</div>
+                <div class="chip"><i class="fa-solid fa-credit-card"></i></div>
             </div>
-
             <div class="price"><span>R$</span>25</div>
             <div class="desc">Acesso básico para compras essenciais.</div>
-
             <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">Comprar Agora</a>
         </div>
     </div>
 
-    <div class="card">
+    <div class="card gold">
+        <div class="badge">POPULAR</div>
         <div class="inner">
             <div class="card-top">
                 <div class="card-name">Gold</div>
+                <div class="chip"><i class="fa-solid fa-credit-card"></i></div>
             </div>
-
             <div class="price"><span>R$</span>120</div>
             <div class="desc">Para quem deseja mais possibilidades.</div>
-
             <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">Comprar Agora</a>
         </div>
     </div>
 
-    <div class="card">
+    <div class="card diamond">
+        <div class="badge">VIP</div>
         <div class="inner">
             <div class="card-top">
                 <div class="card-name">Diamond</div>
+                <div class="chip"><i class="fa-solid fa-gem"></i></div>
             </div>
-
             <div class="price"><span>R$</span>210</div>
-            <div class="desc">O plano mais desejado da plataforma.</div>
-
+            <div class="desc">O plano mais desejado da plataforma com limites incríveis.</div>
             <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">Comprar Agora</a>
         </div>
     </div>
 
-    <!-- CARD COM IMAGEM (CORRIGIDO) -->
-    <div class="card">
+    <!-- CARD IMAGEM (CORRIGIDO) -->
+    <div class="card diamond">
         <div class="inner">
 
             <div class="nf-image">
                 <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=300" alt="dinheiro">
             </div>
 
-            <div class="desc">Coleção premium disponível.</div>
-
-            <a class="buy-btn" href="https://wa.me/+55 99 8544-7179" target="_blank">
+            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">
                 Comprar Agora
             </a>
 
