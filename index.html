@@ -88,12 +88,6 @@ header p{
     border-radius:28px;
     padding:2px;
     transition:.4s;
-
-    box-shadow:
-        0 0 15px #00e5ff,
-        0 0 30px #00e5ff,
-        0 0 60px #8b5cf6,
-        0 0 100px #8b5cf6;
 }
 .card::before{
     content:"";
@@ -141,7 +135,38 @@ header p{
     padding:25px;
     height:100%;
 }
+/* CLASSIC CINZA */
 
+.classic .inner{
+    background:linear-gradient(
+        135deg,
+        #2b2b2b,
+        #4a4a4a,
+        #6b7280
+    );
+}
+
+/* GOLD DOURADO */
+
+.gold .inner{
+    background:linear-gradient(
+        135deg,
+        #5a4300,
+        #b8860b,
+        #ffd700
+    );
+}
+
+/* DIAMOND AZUL */
+
+.diamond .inner{
+    background:linear-gradient(
+        135deg,
+        #041a35,
+        #0b4ea2,
+        #00cfff
+    );
+}
 /* BADGE */
 
 .badge{
@@ -180,7 +205,7 @@ header p{
     align-items:center;
     font-size:22px;
 }
-
+    
 /* PREÇO */
 
 .price{
@@ -216,7 +241,7 @@ header p{
 }
 
 .classic .buy-btn{
-    background:#00e5ff;
+    background:#9ca3af;
     color:black;
 }
 
@@ -226,10 +251,9 @@ header p{
 }
 
 .diamond .buy-btn{
-    background:#b517ff;
-    color:white;
+    background:#00cfff;
+    color:#041a35;
 }
-
 /* NF */
 
 .nf-image{
@@ -250,9 +274,54 @@ header p{
 .nf-image img:hover{
     transform:scale(1.05);
 }
+/* NF VERDE NEON */
 
+.nf .inner{
+    background:linear-gradient(
+        135deg,
+        #032614,
+        #065f46,
+        #10b981
+    );
+}
+
+.nf{
+    box-shadow:
+        0 0 15px #10b981,
+        0 0 35px #10b981,
+        0 0 70px rgba(16,185,129,.8);
+}
+.nf .buy-btn{
+    background:#10b981;
+    color:white;
+}
 /* FOOTER */
+/* NEON CLASSIC */
 
+.classic{
+    box-shadow:
+        0 0 15px #9ca3af,
+        0 0 30px #9ca3af,
+        0 0 60px rgba(156,163,175,.7);
+}
+
+/* NEON GOLD */
+
+.gold{
+    box-shadow:
+        0 0 15px #ffd700,
+        0 0 35px #ffd700,
+        0 0 70px rgba(255,215,0,.8);
+}
+
+/* NEON DIAMOND */
+
+.diamond{
+    box-shadow:
+        0 0 15px #00cfff,
+        0 0 35px #00cfff,
+        0 0 70px rgba(0,207,255,.8);
+}
 footer{
     text-align:center;
     padding:35px;
@@ -273,7 +342,6 @@ footer{
     }
 
 }
-
 </style>
 </head>
 
@@ -364,7 +432,7 @@ footer{
                 <div class="card-name">Diamond</div>
 
                 <div class="chip">
-                    <i class="fa-solid fa-gem"></i>
+                  <i class="fa-solid fa-gem" style="color:#00cfff;"></i>
                 </div>
             </div>
 
@@ -386,47 +454,44 @@ footer{
 
     </div>
 
-    <!-- NF -->
+  <!-- NF -->
 
-    <div class="card diamond">
+<div class="card nf">
 
-        <div class="badge">NF</div>
+    <div class="badge">NF</div>
 
-        <div class="inner">
+    <div class="inner">
 
-            <div class="card-top">
+        <div class="card-top">
 
-                <div class="card-name"NF""> 
-                </div>
+            <div class="card-name">NF</div>
 
-                <div class="chip">
-                    <i class="fa-solid fa-file-invoice"></i>
-                </div>
-
+            <div class="chip">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
             </div>
-
-            <div class="nf-image">
-
-                <!-- TROQUE A FOTO AQUI -->
-
-                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800"
-                alt="NF">
-
-            </div>
-
-            <div class="desc">
-               Variações de cedulas perfeitas
-            </div>
-
-            <a class="buy-btn"
-            href="https://wa.me/559985447179"
-            target="_blank">
-            Comprar Agora
-            </a>
 
         </div>
 
+        <div class="nf-image">
+
+            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1200"
+            alt="NF">
+
+        </div>
+
+        <div class="desc">
+            Atendimento rápido e suporte prioritário.
+        </div>
+
+        <a class="buy-btn"
+        href="https://wa.me/559985447179"
+        target="_blank">
+            Comprar Agora
+        </a>
+
     </div>
+
+</div>
 
 </section>
 
