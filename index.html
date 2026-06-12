@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Elite Cards Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
@@ -20,158 +21,119 @@
 body{
     background:#050816;
     color:white;
-    min-height:100vh;
     overflow-x:hidden;
+    min-height:100vh;
 }
 
-/* FUNDO NEON */
+/* FUNDO */
 body::before,
 body::after{
     content:"";
     position:fixed;
-    width:600px;
-    height:600px;
-    filter:blur(140px);
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    filter:blur(180px);
     z-index:-1;
 }
 
 body::before{
-    background:#00f7ff40;
-    top:-200px;
-    left:-200px;
+    background:#00e5ff33;
+    top:-250px;
+    left:-250px;
 }
 
 body::after{
-    background:#7c3aed40;
-    bottom:-200px;
-    right:-200px;
+    background:#8b5cf633;
+    bottom:-250px;
+    right:-250px;
 }
+
+/* HEADER */
 
 header{
     text-align:center;
-    padding:70px 20px;
+    padding:70px 20px 40px;
 }
 
 header h1{
     font-size:4rem;
-    font-weight:700;
-    background:linear-gradient(90deg,#00e5ff,#8b5cf6);
+    font-weight:800;
+    background:linear-gradient(90deg,#00e5ff,#8b5cf6,#ff00ff);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 header p{
-    color:#9ca3af;
     margin-top:15px;
+    color:#94a3b8;
+    font-size:1rem;
 }
 
 /* CARDS */
+
 .cards{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:40px;
-    padding:20px 30px 80px;
+    gap:35px;
+    padding:30px;
 }
 
-/* CARD BASE */
+/* CARD */
+
 .card{
-    width:340px;
-    border-radius:25px;
-    padding:2px;
     position:relative;
+    width:340px;
+    border-radius:28px;
+    padding:2px;
     transition:.4s;
 }
 
-/* NEON BORDER EFFECT */
 .card::before{
     content:"";
     position:absolute;
     inset:0;
-    border-radius:25px;
-    padding:2px;
-    background:linear-gradient(135deg,#00e5ff,#8b5cf6,#ff00ff);
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;
-            mask-composite:exclude;
-    filter:blur(0.5px);
-    opacity:.9;
+    border-radius:28px;
+    background:linear-gradient(
+        135deg,
+        #00e5ff,
+        #8b5cf6,
+        #ff00ff,
+        #00e5ff
+    );
+    z-index:-2;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    inset:-6px;
+    border-radius:30px;
+    background:linear-gradient(
+        135deg,
+        #00e5ff,
+        #8b5cf6,
+        #ff00ff
+    );
+    filter:blur(25px);
+    opacity:.7;
+    z-index:-3;
 }
 
 .card:hover{
-    transform:translateY(-15px) scale(1.03);
+    transform:translateY(-12px) scale(1.03);
 }
 
-/* INNER */
 .inner{
     background:#0b1020;
-    border-radius:23px;
+    border-radius:26px;
     padding:25px;
-    position:relative;
+    height:100%;
 }
-
-/* TOP */
-.card-top{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:30px;
-}
-
-.card-name{
-    font-size:28px;
-    font-weight:700;
-}
-
-.chip{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(255,255,255,.08);
-}
-
-/* PRICE */
-.price{
-    font-size:52px;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-.price span{
-    font-size:20px;
-}
-
-.desc{
-    color:#cbd5e1;
-    margin-bottom:25px;
-}
-
-/* BUTTON */
-.buy-btn{
-    display:block;
-    text-align:center;
-    margin-top:25px;
-    padding:15px;
-    border-radius:14px;
-    font-weight:700;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.buy-btn:hover{
-    transform:scale(1.05);
-}
-
-/* CORES */
-.classic .buy-btn{ background:#00e5ff; color:#000; }
-.gold .buy-btn{ background:#ffd700; color:#000; }
-.diamond .buy-btn{ background:#b517ff; color:#fff; }
 
 /* BADGE */
+
 .badge{
     position:absolute;
     top:15px;
@@ -184,18 +146,95 @@ header p{
     font-weight:700;
 }
 
-/* NF AREA */
+/* TOP */
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.card-name{
+    font-size:30px;
+    font-weight:700;
+}
+
+.chip{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+}
+
+/* PREÇO */
+
+.price{
+    font-size:55px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.price span{
+    font-size:22px;
+}
+
+.desc{
+    color:#cbd5e1;
+    line-height:1.6;
+}
+
+/* BOTÃO */
+
+.buy-btn{
+    display:block;
+    text-align:center;
+    margin-top:25px;
+    padding:15px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    transform:scale(1.05);
+}
+
+.classic .buy-btn{
+    background:#00e5ff;
+    color:black;
+}
+
+.gold .buy-btn{
+    background:#ffd700;
+    color:black;
+}
+
+.diamond .buy-btn{
+    background:#b517ff;
+    color:white;
+}
+
+/* NF */
+
 .nf-image{
     text-align:center;
-    margin:10px 0 20px;
+    margin:15px 0 20px;
 }
 
 .nf-image img{
     width:100%;
-    max-width:240px;
+    max-width:250px;
     border-radius:18px;
-    box-shadow:0 0 35px rgba(0,229,255,.35);
     transition:.4s;
+    box-shadow:
+        0 0 20px rgba(0,229,255,.5),
+        0 0 50px rgba(139,92,246,.4);
 }
 
 .nf-image img:hover{
@@ -203,15 +242,26 @@ header p{
 }
 
 /* FOOTER */
+
 footer{
     text-align:center;
+    padding:35px;
     color:#64748b;
-    padding:30px;
 }
 
+/* RESPONSIVO */
+
 @media(max-width:768px){
-    header h1{ font-size:2.5rem; }
-    .card{ width:100%; max-width:350px; }
+
+    header h1{
+        font-size:2.8rem;
+    }
+
+    .card{
+        width:100%;
+        max-width:350px;
+    }
+
 }
 
 </style>
@@ -221,63 +271,150 @@ footer{
 
 <header>
     <h1>ELITE CARDS</h1>
-    <p>Escolha o plano perfeito para suas necessidades.</p>
+    <p>Escolha o plano ideal para você.</p>
 </header>
 
 <section class="cards">
 
+    <!-- CLASSIC -->
+
     <div class="card classic">
+
         <div class="inner">
+
             <div class="card-top">
                 <div class="card-name">Classic</div>
-                <div class="chip"><i class="fa-solid fa-credit-card"></i></div>
-            </div>
-            <div class="price"><span>R$</span>25</div>
-            <div class="desc">Acesso básico para compras essenciais.</div>
-            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">Comprar Agora</a>
-        </div>
-    </div>
 
-    <div class="card gold">
-        <div class="badge">POPULAR</div>
-        <div class="inner">
-            <div class="card-top">
-                <div class="card-name">Gold</div>
-                <div class="chip"><i class="fa-solid fa-credit-card"></i></div>
-            </div>
-            <div class="price"><span>R$</span>120</div>
-            <div class="desc">Para quem deseja mais possibilidades.</div>
-            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">Comprar Agora</a>
-        </div>
-    </div>
-
-    <div class="card diamond">
-        <div class="badge">VIP</div>
-        <div class="inner">
-            <div class="card-top">
-                <div class="card-name">Diamond</div>
-                <div class="chip"><i class="fa-solid fa-gem"></i></div>
-            </div>
-            <div class="price"><span>R$</span>210</div>
-            <div class="desc">O plano mais desejado da plataforma com limites incríveis.</div>
-            <a class="buy-btn" href="https://wa.me/5544998167018" target="_blank">Comprar Agora</a>
-        </div>
-    </div>
-
-    <!-- NF / MALOTE -->
-    <div class="card diamond">
-        <div class="inner">
-
-            <div class="nf-image">
-                <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=600" 
-                alt="malote de dinheiro">
+                <div class="chip">
+                    <i class="fa-solid fa-credit-card"></i>
+                </div>
             </div>
 
-            <a class="buy-btn" href="https://wa.me/559985447179" target="_blank">
-                Comprar Agora
+            <div class="price">
+                <span>R$</span>25
+            </div>
+
+            <div class="desc">
+                Plano básico com acesso rápido e prático.
+            </div>
+
+            <a class="buy-btn"
+            href="https://wa.me/5544998167018"
+            target="_blank">
+            Comprar Agora
             </a>
 
         </div>
+
+    </div>
+
+    <!-- GOLD -->
+
+    <div class="card gold">
+
+        <div class="badge">POPULAR</div>
+
+        <div class="inner">
+
+            <div class="card-top">
+                <div class="card-name">Gold</div>
+
+                <div class="chip">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+            </div>
+
+            <div class="price">
+                <span>R$</span>120
+            </div>
+
+            <div class="desc">
+                Mais vantagens e recursos para quem busca mais possibilidades.
+            </div>
+
+            <a class="buy-btn"
+            href="https://wa.me/5544998167018"
+            target="_blank">
+            Comprar Agora
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- DIAMOND -->
+
+    <div class="card diamond">
+
+        <div class="badge">VIP</div>
+
+        <div class="inner">
+
+            <div class="card-top">
+                <div class="card-name">Diamond</div>
+
+                <div class="chip">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+            </div>
+
+            <div class="price">
+                <span>R$</span>210
+            </div>
+
+            <div class="desc">
+                O plano premium com os maiores benefícios da plataforma.
+            </div>
+
+            <a class="buy-btn"
+            href="https://wa.me/5544998167018"
+            target="_blank">
+            Comprar Agora
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- NF -->
+
+    <div class="card diamond">
+
+        <div class="badge">NF</div>
+
+        <div class="inner">
+
+            <div class="card-top">
+
+                <div class="card-name">NF</div>
+
+                <div class="chip">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+
+            </div>
+
+            <div class="nf-image">
+
+                <!-- TROQUE A FOTO AQUI -->
+
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800"
+                alt="NF">
+
+            </div>
+
+            <div class="desc">
+                Emissão de NF com atendimento rápido.
+            </div>
+
+            <a class="buy-btn"
+            href="https://wa.me/559985447179"
+            target="_blank">
+            Comprar Agora
+            </a>
+
+        </div>
+
     </div>
 
 </section>
